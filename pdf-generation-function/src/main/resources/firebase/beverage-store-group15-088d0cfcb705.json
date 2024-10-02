@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "beverage-store-group15",
+  "private_key_id": "088d0cfcb705871aa2997e14da36c0ad8f3dcac2",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDFYI/Hl23LEC0J\nCnNF2+4VlVWt1Kot2C6ns58i8Rt+DQlTZA74WUmi4Tt5KkD/x8iiQxeacsmK5Mod\nhRHGesDu9jDMo7UrobH3Rz2MfIn5CTZ4kw/9dTORoeA0qyvPK936ReoMuB4Ixi/2\n8Jpfj0k1V0+l2vivt64+KmDSihezcarbGgIwXOL78rkdV1TFfmLhhzh7RN+9b6/L\nqWH1aVGljrXNm5Qr2nC2+C4QGs+W3bzCkp+gKjvcRSHr6TTMnEQ/upsbceU7uJq4\nVF41OMTXzto+8uB9PvdmVRu3dHQwgWBwxWCWXQZR1XvRdo6+QAKJsFr+S0MBqjFP\nLj2qSl7nAgMBAAECggEABRch18AhCPaob3sOHZ231mV2kATtd3QDqATEgU5kkVJD\njLU5tmmSS5mxdfhQATvyAbVNqFV2uzB+KFeK1AQzpTYP0u2tIEXx5NjsGz5vAU9q\nhAUoiWng/Zi5XPWSxXhx9IcIq6SBkDDET4MSO1qvq0K0/1sJXnn6cjuXkBAXRZc7\nz/g2AqPWZUAy5cWk8/QZ955E94msQe0JE35D/3mYH7/E2OAY0MUnlj270WFHE6JY\nLjVmb9DaTH6oieatY3BU2BrXL0qoV6cNJNc5iX3CKh6l1Tsh0scgrOjNoXugx7QP\niZVj51A0UHtQDVfPoJPJT4rbBotmps0KvpyECpKPwQKBgQD7kNySzNRxO/BmplHh\nmSwoR9VCMuD680hBDJ1RqzDUibZB7y9XDOKScnO662GNBOVa3VtZ/8ZpkRKAnD5C\nwRHc/JkFGJLVrPRuAxe+ltsH1MLMHPqw+4JykH77Yf/X3quiSDrTJr2hNYWI+7G8\nEre31AWY6kZeI/cdQXYE+AYkRwKBgQDI2y9aLS5wzC/6/Dmno8FiHRj1QHKWD2sa\n8Dhl0GLl5fjGaJgmFrP1n6YI86p/xiFdmdoGhnn6YNz9IhsS7MacobicFHb4q5sC\nCuC4WY7VamcHsuSbyPYBa/u6YyOCN9aGM6tgSOxNh7l/M3QJtn8CUmeDnZKCz0Qo\nAhQHhMRgYQKBgQC4AfjlQ//sp5wraWKhMonzGL/rwQ2BYewq8JAuCZsZC3YN+mdV\nNC6SUjdGtR9QqBEfiqRkS0uVMjEnc6Gy8EghrX48FQJqWy0bPxXiKbQioUSvSk8w\nn3eGVx0awU8DVnOSq2SjyEWSonR/gyM5XzOUufgyJsK733DErHooHkdXxwKBgGzS\nK/aMchPU3M37p3UHCLgSkboWf76DfgDrU3L+EwcBsOY2NvCz7i5On9NLyP1PKDah\nK3nLk/yuTCytNMPtGrI0AGQ3xjl2KBZUNGpMw1EnQ8jtCGTK3VXp3kmeeteLTyQI\njHovKC/dMAgVpXG5uVhVsxWg4ocSqpeOgLGOIiMhAoGBAL0bYWtN2Kaxk69cBsou\noyzsLWI6AhFtEdSXTl89ARLOsfLKgg+eGdPZysvYcUu6kwc3o0YCLWa9xF8hteCQ\nInTfihucnuDAHrbEe8dugeCRXQaE6bXHZ7qZdZ24DyaSCC0fOScHcu8VYCplxm0I\ndacdJKwQAYA4hoUVfVrq8MZb\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-1zpoc@beverage-store-group15.iam.gserviceaccount.com",
+  "client_id": "111462217101419440059",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-1zpoc%40beverage-store-group15.iam.gserviceaccount.com"
+}

@@ -1,0 +1,213 @@
+.alertDiv {
+    border: 10px;
+    font-size: 14px;
+    padding: 2px 5px;
+    font-family: Tahoma, serif; 
+    color: green;
+    background-color: white;
+    margin-left:30px;
+
+}
+
+#close {
+    float:left;
+    display:inline-block;
+    padding:2px 5px;
+    background:#ccc;
+}
+
+.header{
+    display: block;
+    background-color: black;
+    color: white;
+}
+
+#home-div {
+    display: block;
+    background-color: black;
+    width: 100%;
+    color: white;
+    border: 2px solid white;
+    text-align: left;
+    padding-left: 5%;
+    margin: 0;
+}
+
+#leftbox{
+    float:left;
+    display: block;
+    background-color:black;
+    color: white;
+    width:50%;
+    height:100px;
+    text-align: right;
+    /*font-family: "Arial Rounded MT Bold";*/
+    /*margin: auto;*/
+}
+#rightbox{
+    float:right;
+    text-align: right;
+    display: block;
+    background-color: black;
+    color: white;
+    width:50%;
+    height:100px;
+    font-size: large;
+    font-family: "Arial Rounded MT Bold", serif;
+}
+
+.isDisabled {
+    color: black;
+    cursor: not-allowed;
+    opacity: 0.5;
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-space: 2px;
+    /*margin-right: 2%;*/
+    text-align: right;
+}
+.isEnabled{
+    color: black;
+    font-family: "Arial Rounded MT Bold", serif;
+    letter-spacing: 1px;
+    text-space: 2px;
+}
+
+.cart {
+    text-align: right;
+    margin-right: 2%;
+    font-family: Arial Rounded MT Bold, serif;
+    font-size: large;
+    font-weight: bold;
+}
+
+.links{
+    font-size: large;
+    font-family: "Arial Rounded MT Bold", serif;
+    text-decoration: none;
+    /*margin-left: 5px;*/
+    /*margin-right: 5px;*/
+}
+
+.one{
+    color: white;
+    /*text-decoration: */
+    font-family: "Arial Rounded MT Bold", serif;
+    letter-spacing: 1px;
+    text-space: 2px;
+}
+
+
+input[type=submit] {
+    width: 100px;
+    height: 40px;
+    background-color: black;
+    border: 2PX solid greenyellow;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family: Arial, serif;
+}
+
+.button1 {
+    display: unset;
+    width: 200px;
+    height: 30px;
+    border: 2px solid greenyellow;
+    background-color: grey;
+    padding: 05px 5px;
+    text-align: center;
+    /* margin: auto; */
+    vertical-align: middle;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.button2 {
+    display: unset;
+    width: 200px;
+    height: 30px;
+    border: 2px solid greenyellow;
+    background-color: grey;
+    padding: 05px 5px;
+    text-align: center;
+    /* margin: auto; */
+    vertical-align: middle;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+#container{
+    text-align: justify;
+    margin-top: 100px;
+    position: fixed;
+
+}
+
+#centered-div {
+    display: block;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    text-align: center;
+}
+#table1 {
+    table-layout: fixed;
+    width: 60%;
+    height: 70%;
+    border-collapse: collapse;
+    border: 2px solid white;
+    column-width: 60px;
+}
+
+table {
+    table-layout: fixed;
+    /*width: 60%;*/
+    border-collapse: collapse;
+    border: 2px solid white;
+    column-width: 60px;
+    width: auto;
+
+}
+caption{
+    font-size: large;
+    font-family: 'verdana', cursive;
+    padding: 20px;
+    letter-spacing: 1px;
+    margin-top: 2%;
+    font-weight: bold;
+}
+th, td {
+    padding: 20px;
+    /*margin-right: 30px;*/
+}
+
+th {
+    letter-spacing: 2px;
+    font-family: "Arial Rounded MT Bold", serif;
+    font-size: large;
+    text-align: left;
+}
+
+td {
+    letter-spacing: 2px;
+    font-family: "Berlin Sans FB", serif;
+    font-size: medium;
+    text-align: left;
+}
+
+#welcome {
+    padding-left: 15px;
+    padding-top: 15px;
+    font-family: "Arial Rounded MT Bold", serif;
+}

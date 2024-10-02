@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Beverage Service</title>
+    <!-- Bootstrap CSS -->
+<!--    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>-->
+<!--    <link th:rel="stylesheet" th:href="@{/webjars/font-awesome/5.11.2/css/all.css} "/>-->
+    <link th:rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css"/>
+</head>
+<body>
+
+<meta name="author" content="Deepika Arneja"/>
+<meta name="Description"
+      content="Template to display botttles/crates on home page and added spinner to input quantity"/>
+
+<div th:replace="fragments/header.html :: header"></div>
+<div id="boxes">
+    <div id="leftbox">
+        <h1>Beverage Store</h1>
+    </div>
+</div>
+
+<div class="cart">
+    <a class="isDisabled" th:if="${listofitems==0}">Shopping Cart</a>
+    <a class="isEnabled" th:if="${listofitems>0}" href="reviewCart.html" th:href="@{/shoppingcart}"
+       th:text="'Shopping Cart ('+${listofitems} +')'"></a>
+</div>
+<table>
+    <thead>
+    <tr>
+        <th>Beverage Image</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Available</th>
+        <th>Quantity</th>
+        <th>Buy</th>
+    </tr>
+    </thead>
+    </div>
+    <tbody>
+    <div class="item-set" id="item-set">
+        <tr th:each="beverage : ${beverages}">
+            <form th:object="${item}" th:action="@{/shoppingcart/add}" method="POST">
+                <td><img width="130" height="150" th:src="${beverage.pic}"/></td>
+
+                <td th:text="${beverage.name}"></td>
+
+                <td th:text="${beverage.price}+' €'"> </td>
+
+                <td th:text="${beverage.inStock}"></td>
+                <!--                <td th:text="${item.volume}"></td>-->
+                <td>
+                    <input value="0" min="1" th:max="${beverage.inStock}" type="number" class="form-control"
+                           id="inStock"
+                           autocomplete="off" th:field="*{quantity}"/>
+                </td>
+                <td>
+
+                    <input type="hidden" th:id="beverageId" th:name="beverageId" th:value="${beverage.id}">
+                    <input type="submit" value="Add to Cart">
+                </td>
+            </form>
+        </tr>
+    </div>
+    </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" th:rel="stylesheet"/>
+    <title>New User</title>
+</head>
+<body>
+<meta content="Muhammad Sultan" name="author"/>
+<meta content="Template to register new user" name="Description"/>
+<div th:replace="fragments/header.html :: header"></div>
+<div id="boxes">
+    <div id="left box">
+        <!--<div id="centered-div">-->
+        <h1>Register new User</h1>
+    </div>
+</div>
+<table>
+    <b th:if="${error}" th:text="${error}" style="color: red;"></b>
+    <caption>User Details</caption>
+    <tbody>
+    <form method="POST" th:action="@{/register}" th:object="${registrationForm}">
+        <tr>
+            <td>Username</td>
+            <td>
+                <input name="username" placeholder="Enter a Username" required th:field="*{username}" type="text">
+                <span class="text-danger" th:errors="*{username}" th:if="${#fields.hasErrors('username')}"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td>
+                <input name="password" placeholder="Enter a Password" required th:field="*{password}" type="password">
+                <span class="text-danger" th:errors="*{password}" th:if="${#fields.hasErrors('password')}"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>E-mail</td>
+            <td>
+                <input name="email" placeholder="Enter E-mail" required th:field="*{email}" type="email">
+                <span class="text-danger" th:errors="*{email}" th:if="${#fields.hasErrors('email')}"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>Birthdate</td>
+            <td>
+                <input name="birthday" required th:field="*{birthday}" type="date"/>
+                <span class="alert alert-danger" th:errors="*{birthday}" th:if="${#fields.hasErrors('birthday')}"/>
+            </td>
+        </tr>
+        <tr>
+            <td><b>Billing Address</b></td>
+        </tr>
+        <tr>
+            <td>Street</td>
+            <td><input name="billingAddresses.street" required th:field="*{billingAddresses[0].street}" type="text"/>
+                <span class="alert alert-danger" th:errors="*{billingAddresses[0].street}"
+                      th:if="${#fields.hasErrors('billingAddresses[0].street')}"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Number</td>
+            <td><input name="billingAddresses.number" required th:field="*{billingAddresses[0].number}" type="number"/>
+                <span class="alert alert-danger" th:errors="*{billingAddresses[0].number}"
+                      th:if="${#fields.hasErrors('billingAddresses[0].number')}"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Postal Code</td>
+            <td><input name="billingAddresses.postalcode" required th:field="*{billingAddresses[0].postalcode}"
+                       type="number"/>
+                <span class="alert alert-danger" th:errors="*{billingAddresses[0].postalcode}"
+                      th:if="${#fields.hasErrors('billingAddresses[0].postalcode')}"/></td>
+        </tr>
+        <tr>
+            <td><b>Delivery Address</b></td>
+        </tr>
+        <tr>
+            <td>Street</td>
+            <td>
+                <input name="deliveryAddresses.street" required th:field="*{deliveryAddresses[0].street}" type="text"/>
+                <span class="alert alert-danger" th:errors="*{deliveryAddresses[0].street}"
+                      th:if="${#fields.hasErrors('deliveryAddresses[0].street')}"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Number</td>
+            <td>
+                <input name="deliveryAddresses.number" required th:field="*{deliveryAddresses[0].number}"
+                       type="number"/>
+                <span class="alert alert-danger" th:errors="*{deliveryAddresses[0].number}"
+                      th:if="${#fields.hasErrors('deliveryAddresses[0].number')}"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Postal Code</td>
+            <td>
+                <input name="deliveryAddresses.postalcode" required th:field="*{deliveryAddresses[0].postalcode}"
+                       type="number"/>
+                <span class="alert alert-danger" th:errors="*{deliveryAddresses[0].postalcode}"
+                      th:if="${#fields.hasErrors('deliveryAddresses[0].postalcode')}"/>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button class="button2" type="submit">Create</button>
+            </td>
+        </tr>
+    </form>
+
+    </tbody>
+</table>
+</body>
+</html>

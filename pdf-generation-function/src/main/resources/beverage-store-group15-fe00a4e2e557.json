@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "beverage-store-group15",
+  "private_key_id": "fe00a4e2e557fd773a624ca6b33cda25f8e24170",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCr13byQ/rv9Xgi\nuw00Ef86ZqrDjYuaFzrI9ivtELxI3rWK2GoTSQnLAxAsa6ljoxLWwo/KFhFgti+q\nSRqTcB0c5ExpZ1zwhr3Vrnc6ADpjwf0ROtPLJK/Pi8cpfd5q2yOE9LgzOpOwjQB1\nqyXYh4IGQS555ZC7q2LBvr8KUC0265LfOZ/wyL+DbSBJ/M0TUCc5Lg1/NJqRqidr\nTfWaWAY2FkjENIZ/waUcIyDAC9HwzV3e3q7/nfjpUKH7M2Gl4TAuakkWZEQTyVZk\nIDBJEoFeuMhmvLIbhMpaLd7EHro8TGYjfY2tDO94GgIyIg9IiNtQQshm2bAHueAI\nrVxuYNnfAgMBAAECggEAUld7MCiB+HTDvcSq1X4gMjBa+Dx9nfcunHhVYRHpXvOU\nwzTjU11mu2g62kY2kz9jehQdyYScjB6QpYTFHswUrzD4KnO0la7DDT6988WDNSUR\n6i0pqohoVEfSxd+B8esS0JVhJG8XsPxHsZqylliMZgnaxt9JZJwBxPvtV/hGSi97\nA2jezxW7/d0Azv5x7f/+YwW1GWFTAQK+hUTO4oXNSzJl2D0vFTOPIvOKkxMNJ1q8\nmLEVEciwXpLYb/TuUoRTg1329yaB6r43+qTjOAiyPxMg6B4xRWegLgdDcZdYi7YV\nfLgEznoVLY/XSGmIH8M5ftu562F6sHIfNJrMqFeiNQKBgQDioksRvxdZjlpeKz5C\n7VaOMzYk8gIUFpPp1LCFRjoON2bNa+iouBBRP2wsUQ2A/sU3kYeBfm07G5Jbjs+x\ntA5BQng0h+GT5moLKMhhhHHDDAFMFZEIn6RAJC6xRqYDrZ+2i8RMnxK/AB2YTzoo\nNY3YOtn9Lpu8mjbKzAwPC/Nk/QKBgQDCG6X7Gb3+D1CA/n9F3jSuE1tyZ45rUNVQ\nZhy8A0KmY8Oc3E4KT6Emvr0MVpbqNxml8BnfdoV984rJiG7m8Cr7emnas4hn/208\naaSkGOhZE+HpogAfk5FKOZaTefOcZKVlfSkTBkyPPPQUWpxYjh34OHDJ49qPyG6v\nfpZovLp/CwKBgQC+OFfn4ksX6OqihYsxo4F1wzgb1GC4OacWqWUrx6Ds08Vef8b8\n7dkMSL5jh/hcn/oqROTGZLYL2X2DiZ972NPqJH8+IBrPB6NUEHv3lbHicw4XrTZZ\nVZ0IFRZ3xwOKrM0T68XsRcv3MoKkl0MKAsE2j1buMZOXvpxkpNUuP+qfhQKBgCeK\nRkdeOQuVxwpfzUFIQGbtXoVxfttxfeKAyn2qFFucmu5LGkKTcfpYhF4NDXTsgHcC\n7+JLXGoJwE3JUv4MElVj3EhGphS5PWE/C+C5iisLF8vlyiykfMYn8Ppdrzg+cEq6\nMjHD6LiM7BNxWcPYP1ae+KrHlXAQnit1l+IB/+N9AoGAQ0bP8oHAhfpaHNmrMD9i\nITTTvhMurIpBH4dP8Er/85kL3tJPUP7RXSm9vAi9d1IUO4wVWQclj/iKe2LGRa/+\n1N8kpsv9ghgKMY5RdVKboz4eB/IWVliiI5LIIdRzfUlg24KhhGajvu/n2n1Gw0l+\nQANeyvOlvdN8mnfKKFIkKvo=\n-----END PRIVATE KEY-----\n",
+  "client_email": "storage-holder@beverage-store-group15.iam.gserviceaccount.com",
+  "client_id": "102643564085002830489",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/storage-holder%40beverage-store-group15.iam.gserviceaccount.com"
+}

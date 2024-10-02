@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+    <head>
+        <meta charset="UTF-8"/>
+        <link th:rel="stylesheet" th:href="@{style.css}" href="style.css"/>
+        <title>Order Details</title>
+    </head>
+    <body>
+        <div id="boxes">
+            <div id="leftbox">
+                <h1> Order Details </h1>
+            </div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item Name</th>
+                    <th>Item Price</th>
+                    <th>Item Quantity</th>
+                    <th>Item picture</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="item : ${order.listOfItems}">
+                    <td class="desc" th:text="${item.beverageName}"></td>
+                    <td class="unit" th:text="${item.price}"></td>
+                    <td class="qty" th:text="${item.quantity}"></td>
+                    <td>
+                        <img width="100px" th:src="${item.beveragePic}" alt="beverage pic"/>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th> Total </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="total" th:text="${order.totalPrice}"></td>
+                </tr>
+            </tbody>
+        </table>
+        <div id="legalcopy">
+            <p class="legal"><strong>Thank you for your shopping!</strong> </p>
+        </div>
+    </body>
+</html>
+
+

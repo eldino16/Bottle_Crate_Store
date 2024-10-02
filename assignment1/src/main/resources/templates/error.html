@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css"/>
+    <title>Error</title>
+</head>
+<body>
+<div th:replace="fragments/header.html :: header"></div>
+<div id="boxes">
+    <div id="leftbox">
+        <!--<div id="centered-div">-->
+        <h1>Error</h1>
+    </div>
+</div>
+<b th:text="${message}"></b>
+</body>
+</html>

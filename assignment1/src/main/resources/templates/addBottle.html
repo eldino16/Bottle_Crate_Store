@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Bottle</title>
+    <!-- Bootstrap CSS -->
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" th:rel="stylesheet"/>
+</head>
+
+<div th:replace="fragments/header.html :: header"></div>
+<div id="boxes">
+    <div id="leftbox">
+        <h1>Add New Bottle</h1>
+    </div>
+</div>
+
+<table>
+    <form method="post" th:action="@{/addnewbottle}" th:object="${bottle}">
+        <tr>
+            <td>Name:</td>
+            <td>
+                <input th:id="name" th:name="name" th:value="${name}" type="text" style="width: 250px"> <font
+                    color="red"> *</font>
+                <span class="error_msg" th:errors="*{name}" th:if="${#fields.hasErrors('name')}"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>Supplier:</td>
+            <td>
+                <th:block th:with="attribute=supplier">
+                    <input th:field="*{__${attribute}__}" type="text" style="width: 250px"/><font color="red"> *</font>
+                    <span class="error_msg" th:errors="*{__${attribute}__}"
+                          th:if="${#fields.hasErrors(attribute)}"></span>
+                </th:block>
+            </td>
+        </tr>
+        <tr>
+            <td>Volume:</td>
+            <td>
+                <th:block th:with="attribute=volume">
+                    <input th:field="*{__${attribute}__}" type="text" style="width: 250px"/><font color="red"> *</font>
+                    <span class="error_msg" th:errors="*{__${attribute}__}"
+                          th:if="${#fields.hasErrors(attribute)}"></span>
+                </th:block>
+            </td>
+        </tr>
+        <tr>
+            <td>Volume Percent:</td>
+            <td>
+                <th:block th:with="attribute=volumePercent">
+                    <input th:field="*{__${attribute}__}" type="text" style="width: 250px"/>
+                    <span class="error_msg" th:errors="*{__${attribute}__}"
+                          th:if="${#fields.hasErrors(attribute)}"></span>
+                </th:block>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>Price:</td>
+            <td>
+                <th:block th:with="attribute=price">
+                    <input th:field="*{__${attribute}__}" type="text" style="width: 250px"/><font color="red"> *</font>
+                    <span class="error_msg" th:errors="*{__${attribute}__}"
+                          th:if="${#fields.hasErrors(attribute)}"></span>
+                </th:block>
+            </td>
+        </tr>
+        <tr>
+            <td>Stock Quantity:</td>
+            <td>
+                <th:block th:with="attribute=inStock">
+                    <input th:field="*{__${attribute}__}" min="1" type="number" style="width: 250px"/>
+                    <span class="error_msg" th:errors="*{__${attribute}__}"
+                          th:if="${#fields.hasErrors(attribute)}"></span>
+                </th:block>
+            </td>
+        </tr>
+        <tr>
+        <tr>
+            <td>Photo url:</td>
+            <td>
+                <th:block th:with="attribute=pic">
+                    <input th:field="*{__${attribute}__}" style="width: 250px" type="text"/><font color="red"> *</font>
+                    <span class="error_msg" th:errors="*{__${attribute}__}"
+                          th:if="${#fields.hasErrors(attribute)}"></span>
+                </th:block>
+            </td>
+        </tr>
+        <td>
+            <input type="submit" value="Save">
+        </td>
+        </tr>
+
+    </form>
+</table>
+</body>
+</html>

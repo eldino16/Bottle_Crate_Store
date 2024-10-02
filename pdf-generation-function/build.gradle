@@ -1,0 +1,55 @@
+plugins {
+    id 'application'
+}
+
+application {
+    mainClass = "de.uniba.dsg.cloudfunction.Function"
+}
+
+group 'de.uniba.dsg.cloudfunction'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 11
+
+repositories {
+    mavenCentral()
+    google()
+}
+
+configurations {
+    invoker
+}
+
+dependencies {
+    implementation group: 'com.google.guava', name: 'guava', version: '33.2.0-jre'
+    implementation group: 'com.google.cloud', name: 'google-cloud-storage', version: '2.37.0'
+    implementation group: 'com.google.cloud.functions.invoker', name: 'java-function-invoker', version: '1.3.1'
+    implementation group: 'com.google.cloud', name: 'google-cloud-firestore', version: '3.21.1'
+    implementation group: 'com.google.firebase', name: 'firebase-admin', version: '9.2.0'
+    implementation group: 'com.google.cloud.functions', name: 'functions-framework-api', version: '1.1.0'
+
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.11.1'
+    implementation 'org.thymeleaf:thymeleaf:3.0.11.RELEASE'
+    implementation 'org.xhtmlrenderer:flying-saucer-pdf:9.1.20'
+    implementation platform('com.google.cloud:libraries-bom:18.0.0')
+
+    compileOnly 'org.projectlombok:lombok:1.18.16'
+    annotationProcessor 'org.projectlombok:lombok:1.18.16'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.16'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.16'
+}
+
+tasks.register("runFunction", JavaExec) {
+    main = 'com.google.cloud.functions.invoker.runner.Invoker'
+    classpath(configurations.invoker)
+    inputs.files(configurations.runtimeClasspath, sourceSets.main.output)
+    // override this defaults by cli arguments or directly in the build here, if the commands are static
+    args(
+            '--target', project.findProperty('runFunction.target') ?: 'de.uniba.dsg.cloudfunction.Function',
+            '--port', project.findProperty('runFunction.port') ?: 8081
+    )
+    doFirst {
+        args('--classpath', files(configurations.runtimeClasspath, sourceSets.main.output).asPath)
+    }
+}

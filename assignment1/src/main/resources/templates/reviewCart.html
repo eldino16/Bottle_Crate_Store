@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css"/>
+    <title>Review Page</title>
+</head>
+<body>
+<div th:replace="fragments/header.html :: header"></div>
+<div id="boxes">
+    <div id="leftbox">
+        <h1>Review Orders</h1>
+    </div>
+</div>
+
+<table id="table1">
+    <caption> Order Summary</caption>
+
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th></th>
+    </tr>
+    </thead>
+    </div>
+    <tbody>
+    <div class="item-set" id="item-set">
+        <tr th:each="item : ${items}">
+            <form th:object="${update}" th:action="@{/shoppingcart/update}" method="POST">
+                <td th:text="${item.beverage.name}"></td>
+                <td>
+                    <input value="0" min="1" th:max="${item.beverage.inStock}" type="number" class="form-control"
+                           id="inStock"
+                           onchange="this.form.submit()" autocomplete="off" th:id="quantity" th:name="quantity"
+                           th:value="${item.quantity}"/>
+                </td>
+                <td th:text="${#numbers.formatDecimal(item.price, 0, 'COMMA', 2, 'POINT')}"></td>
+
+                <td>
+                    <input type="hidden" th:id="beverageId" th:name="beverageId" th:value="${item.beverage.id}">
+                    <a style="color: black" th:href="@{'/shoppingcart/delete/{id}' (id=${item.beverage.id})}">Remove</a>
+                </td>
+
+            </form>
+        </tr>
+    </div>
+    </tbody>
+</table>
+<div id="container">
+    <a th:href="@{'/beverages'}" class="button1">Continue shopping</a>
+    <a th:href="@{'/usersinfo/address'}" class="button2" th:if="${items.size()>0}">Proceed to Checkout</a>
+</div>
+
+</body>
+</html>

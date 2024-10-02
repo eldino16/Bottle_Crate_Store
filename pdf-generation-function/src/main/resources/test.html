@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Title</title>
+    </head>
+    <body>
+        <div class="table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item picture</th>
+                        <th>Item name</th>
+                        <th>Item Quantity</th>
+                        <th>Beverage price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="item : ${order.listOfItems}">
+                        <td><img width="100px" th:src="${item.beveragePic}"/></td>
+                        <td th:text="${item.beverageName}"></td>
+                        <td th:text="${item.quantity}"></td>
+                        <td th:text="${item.price}"></td>
+                    </tr>
+                    <tr>
+                        <td th:text="${order.totalPrice}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,42 @@
+plugins {
+    id 'application'
+}
+
+application {
+    mainClass = "de.uniba.dsg.cloudfunction.Function"
+}
+
+group 'de.uniba.dsg.cloudfunction'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 21
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    invoker
+}
+
+dependencies {
+    implementation 'com.google.cloud.functions:functions-framework-api:1.0.1'
+    //compile 'com.google.cloud:google-cloud-storage:1.113.6'
+    //compile 'javax.mail:mail:1.5.0-b01'
+
+    invoker 'com.google.cloud.functions.invoker:java-function-invoker:1.0.0-alpha-2-rc5'
+}
+
+tasks.register("runFunction", JavaExec) {
+    main = 'com.google.cloud.functions.invoker.runner.Invoker'
+    classpath(configurations.invoker)
+    inputs.files(configurations.runtimeClasspath, sourceSets.main.output)
+    // override this defaults by cli arguments or directly in the build here, if the commands are static
+    args(
+            '--target', project.findProperty('runFunction.target') ?: 'de.uniba.dsg.cloudfunction.Function',
+            '--port', project.findProperty('runFunction.port') ?: 8082
+    )
+    doFirst {
+        args('--classpath', files(configurations.runtimeClasspath, sourceSets.main.output).asPath)
+    }
+}

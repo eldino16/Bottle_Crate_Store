@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css"/>
+    <title>User Info </title>
+</head>
+<body>
+<div th:replace="fragments/header.html :: header"></div>
+<div id="boxes">
+    <div id="leftbox">
+        <!--<div id="centered-div">-->
+        <h1>Checkout</h1>
+    </div>
+</div>
+<table>
+    <caption>User Details</caption>
+    <tbody th:each="userinfo : ${usersinfo}">
+    <form th:object="${userdto}" th:action="@{/usersinfo/updateaddress/{user_id} (user_id= ${userinfo.username})}"
+          method="POST">
+        <tr>
+            <td>User Name</td>
+            <td th:text="${userinfo.username} "></td>
+
+        </tr>
+        <tr>
+            <td>Billing Address</td>
+        </tr>
+        <tr>
+            <td>Street</td>
+            <td><input type="text" th:id="billingAddresses[0].street"
+                       th:name="billingAddresses[0].street"
+                       th:value="${userinfo.billingaddresses[0].street}"></td>
+        </tr>
+
+        <tr>
+            <td>Number</td>
+            <td><input type="number" th:id="billingAddresses[0].number"
+                       th:name="billingAddresses[0].number"
+                       th:value="${userinfo.billingaddresses[0].number}"></td>
+        </tr>
+        <tr>
+
+            <td>Postal Code</td>
+            <td><input type="number" th:id="billingAddresses[0].postalcode"
+                       th:name="billingAddresses[0].postalcode"
+                       th:value="${userinfo.billingaddresses[0].postalcode}"></td>
+        </tr>
+        <tr>
+            <td>Delivery Address</td>
+        </tr>
+        <tr>
+            <td>Street</td>
+            <td><input type="text" th:id="deliveryAddresses[0].street"
+                       th:name="deliveryAddresses[0].street"
+                       th:value="${userinfo.deliveryaddresses[0].street}"></td>
+        </tr>
+        <tr>
+            <td>Number</td>
+            <td><input type="number" th:id="deliveryAddresses[0].number"
+                       th:name="deliveryAddresses[0].number"
+                       th:value="${userinfo.deliveryaddresses[0].number}"></td>
+        </tr>
+        <tr>
+            <td>Postal Code</td>
+            <td><input type="number" th:id="deliveryAddresses[0].postalcode"
+                       th:name="deliveryAddresses[0].postalcode"
+                       th:value="${userinfo.deliveryaddresses[0].postalcode}"></td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit" class="button2">Save Address</button>
+            </td>
+    </form>
+    <td>
+        <form th:object="${newOrder}" th:action="@{/shoppingcart/checkout}" method="POST">
+            <button type="submit" class="button1" th:text="Checkout">Checkout</button>
+        </form>
+    </td>
+    </tr>
+
+    </tbody>
+    </tbody>
+</table>
+
+</body>
+</html>

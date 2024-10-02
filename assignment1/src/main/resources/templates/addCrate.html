@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add new Crate</title>
+    <link th:rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css"/>
+</head>
+
+<div th:replace="fragments/header.html :: header"></div>
+<div id="boxes">
+    <div id="leftbox">
+        <h1>Add New Crate</h1>
+    </div>
+</div>
+
+<table>
+    <form th:object="${crate}" th:action="@{/addnewcrate}" method="post">
+        <tr>
+            <td>Name:</td>
+            <td>
+                <input type="text" th:id="name" th:name="name" th:value="${name}" style="width: 250px"><font
+                    color="red"> *</font>
+                <span class="error_msg" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+            </td>
+        </tr>
+        <tr>
+        <tr>
+            <td>Price:</td>
+            <td>
+                <th:block th:with="attribute=price">
+                    <input type="text" th:field="*{__${attribute}__}" style="width: 250px"/><font
+                        color="red"> *</font>
+                    <span th:if="${#fields.hasErrors(attribute)}" th:errors="*{__${attribute}__}"
+                          class="error_msg"></span>
+                </th:block>
+            </td>
+        </tr>
+        <tr>
+        <tr>
+            <td>Photo URL:</td>
+            <td>
+                <th:block th:with="attribute=pic">
+                    <input type="text" th:field="*{__${attribute}__}" style="width: 250px"/><font color="red"> *</font>
+                    <span th:if="${#fields.hasErrors(attribute)}" th:errors="*{__${attribute}__}"
+                          class="error_msg"></span>
+                </th:block>
+            </td>
+        </tr>
+        <tr>
+            <td> Bottle</td>
+            <td>
+                <select th:field="*{bottle.id}" style="width: 250px">
+                    <option th:each="bottle : ${bottles}"
+                            th:value="${bottle.id}"
+                            th:utext="${bottle.name}"></option>
+                </select><font color="red"> *</font>
+                <font size="1px"> Please choose a bottle type for this crate</font>
+            </td>
+        </tr>
+        <tr>
+            <td>Stock Quantity:</td>
+            <td>
+                <th:block th:with="attribute=inStock">
+                    <input type="number" min="1" th:field="*{__${attribute}__}" style="width: 250px"/><font
+                        color="red"> *</font>
+                    <span th:if="${#fields.hasErrors(attribute)}" th:errors="*{__${attribute}__}"
+                          class="error_msg"></span>
+                </th:block>
+            </td>
+        </tr>
+        <tr>
+            <td>Number of Bottles:</td>
+            <td>
+                <th:block th:with="attribute=noOfBottles">
+                    <input type="number" max="20" min="1" th:field="*{__${attribute}__}" style="width: 250px"/><font
+                        color="red"> *</font>
+                    <span th:if="${#fields.hasErrors(attribute)}" th:errors="*{__${attribute}__}"
+                          class="error_msg"></span>
+                </th:block>
+            </td>
+        </tr>
+        <td>
+            <input type="submit" value="Save">
+        </td>
+        </tr>
+    </form>
+</table>
+</body>
+</html>

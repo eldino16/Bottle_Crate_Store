@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css"/>
+    <title>Checkout </title>
+</head>
+<body>
+<div th:replace="fragments/header.html :: header"></div>
+<div id="boxes">
+    <div id="leftbox">
+        <h1>Checkout Page</h1>
+    </div>
+</div>
+<h2> Thank you for Shopping! </h2>
+<a href="beverages.html" th:href="@{/beverages}">Return to home screen</a>
+<table>
+    <thead>
+    <tr>
+        <th>Item Position</th>
+        <th>Item Price</th>
+        <th>Item Quantity</th>
+        <th>Beverage Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="item : ${orderItems}">
+        <td th:text="${item.position}"></td>
+        <td th:text="${#numbers.formatDecimal(item.price, 0, 'COMMA', 2, 'POINT')}"></td>
+        <td th:text="${item.quantity}"></td>
+        <td th:text="${item.beverage.name}"></td>
+        <td><img width="100px" th:src="${item.beverage.pic}"/></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
