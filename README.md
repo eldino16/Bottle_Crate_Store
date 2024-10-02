@@ -51,5 +51,3 @@ http://beverage-store-group15.dt.r.appspot.com/
 
 Login with Default user or create new user. Please provide valid email id to verify mail sending function.
 Place an order and checkout. PDF should be saved on cloud storage bucket and email should be triggered. You should receive PDF in the email provided.
-
-**We have added you as Owner in Cloud project (beverage-store-group15)**
