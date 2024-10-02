@@ -1,4 +1,4 @@
-# group15
+# Bottle Crate Store
 
 **Assignment 1: Beverage Store**
 
